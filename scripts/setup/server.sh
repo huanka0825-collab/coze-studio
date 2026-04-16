@@ -58,18 +58,20 @@ else
     echo "⚠️ goimports not found, skipping Go file formatting."
 fi
 
-echo "🛠  Building Go project..."
-rm -rf "$BIN_DIR/opencoze"
-cd $BACKEND_DIR &&
-    go build -ldflags="-s -w" -o "$BIN_DIR/opencoze" main.go
+if [ -f "$BIN_DIR/opencoze" ]; then
+    echo "✅ Using existing binary: $BIN_DIR/opencoze"
+else
+    echo "🛠  Building Go project..."
+    cd $BACKEND_DIR &&
+        go build -ldflags="-s -w" -o "$BIN_DIR/opencoze" main.go
 
-# 添加构建失败检查
-if [ $? -ne 0 ]; then
-    echo "❌ Go build failed - aborting startup"
-    exit 1
+    if [ $? -ne 0 ]; then
+        echo "❌ Go build failed - aborting startup"
+        exit 1
+    fi
+
+    echo "✅ Build completed successfully!"
 fi
-
-echo "✅ Build completed successfully!"
 
 echo "📑 Copying environment file..."
 if [ -f "$ENV_FILE" ]; then
@@ -93,6 +95,12 @@ for arg in "$@"; do
     if [[ "$arg" == "-start" ]]; then
         echo "🚀 Starting Go service..."
         cd $BIN_DIR && ./opencoze "$@"
+        exit 0
+    fi
+    if [[ "$arg" == "-pack" ]]; then
+        echo "📦 Packing deployment archive..."
+        cd "$BIN_DIR" && tar czf opencoze-deploy.tar.gz opencoze resources/ .env*
+        echo "✅ Archive created: $BIN_DIR/opencoze-deploy.tar.gz"
         exit 0
     fi
 done

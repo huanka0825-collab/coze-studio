@@ -45,6 +45,14 @@ build_server:
 	@echo "Building server..."
 	@bash $(BUILD_SERVER_SCRIPT)
 
+pack: env
+	@if [ ! -d "$(STATIC_DIR)" ]; then \
+		echo "Static directory '$(STATIC_DIR)' not found, building frontend..."; \
+		$(MAKE) fe; \
+	fi
+	@echo "Building and packing for Linux deployment..."
+	@GOOS=linux GOARCH=amd64 APP_ENV=debug bash $(BUILD_SERVER_SCRIPT) -pack
+
 sync_db: env
 	@echo "Syncing database..."
 	@docker compose -f $(COMPOSE_FILE) --env-file $(ENV_FILE) --profile mysql-setup up -d
