@@ -1,10 +1,10 @@
 id: 60090
-name: Doubao-Seed-1.6-Thinking
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-Seed-1.6-Thinking
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: 在思考能力上进行了大幅强化， 对比 doubao 1.5 代深度理解模型，在编程、数学、逻辑推理等基础能力上进一步提升， 支持视觉理解。
-    en: Significantly enhanced in thinking capabilities, compared to the doubao 1.5 generation deep understanding model, with further improvements in fundamental skills such as programming, mathematics, and logical reasoning, and support for visual understanding.
+    zh: 在思考能力上进行了大幅强化， 对比 qitan 1.5 代深度理解模型，在编程、数学、逻辑推理等基础能力上进一步提升， 支持视觉理解。
+    en: Significantly enhanced in thinking capabilities, compared to the qitan 1.5 generation deep understanding model, with further improvements in fundamental skills such as programming, mathematics, and logical reasoning, and support for visual understanding.
 default_parameters:
     - name: temperature
       label:

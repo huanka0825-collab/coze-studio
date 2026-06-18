@@ -108,18 +108,36 @@ func initOldModelConf(ctx context.Context, oss storage.Storage, c *ModelConfig) 
 }
 
 func initModelByEnv() (*Model, error) {
-	if os.Getenv("MODEL_PROTOCOL_0") == "" || os.Getenv("MODEL_OPENCOZE_ID_0") == "" {
+	hasNativeModel := os.Getenv("MODEL_PROTOCOL_0") != "" && os.Getenv("MODEL_OPENCOZE_ID_0") != ""
+	hasQitanModel := getFirstEnv("QITAN_LLM_BASE_URL", "QITAN_AI_BASE_URL") != "" &&
+		getFirstEnv("QITAN_LLM_MODEL", "QITAN_AI_MODEL") != ""
+	if !hasNativeModel && !hasQitanModel {
 		return nil, nil
 	}
-	protocol := os.Getenv("MODEL_PROTOCOL_0")
-	openCozeID, err := envkey.GetI64("MODEL_OPENCOZE_ID_0")
-	if err != nil {
-		return nil, err
+
+	protocol := getFirstEnv("MODEL_PROTOCOL_0", "QITAN_LLM_PROTOCOL")
+	if protocol == "" {
+		protocol = "openai"
 	}
-	name := os.Getenv("MODEL_NAME_0")
-	modelID := os.Getenv("MODEL_ID_0")
-	apiKey := os.Getenv("MODEL_API_KEY_0")
-	baseURL := os.Getenv("MODEL_BASE_URL_0")
+
+	var openCozeID int64
+	var err error
+	if os.Getenv("MODEL_OPENCOZE_ID_0") != "" {
+		openCozeID, err = envkey.GetI64("MODEL_OPENCOZE_ID_0")
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		openCozeID = 910001
+	}
+
+	name := getFirstEnv("MODEL_NAME_0", "QITAN_LLM_NAME")
+	if name == "" {
+		name = "启探默认模型"
+	}
+	modelID := getFirstEnv("MODEL_ID_0", "QITAN_LLM_MODEL", "QITAN_AI_MODEL")
+	apiKey := getFirstEnv("MODEL_API_KEY_0", "QITAN_LLM_API_KEY", "QITAN_AI_API_KEY")
+	baseURL := getFirstEnv("MODEL_BASE_URL_0", "QITAN_LLM_BASE_URL", "QITAN_AI_BASE_URL")
 
 	modelClass := strProtocolToModelClass(Protocol(protocol))
 	provider, _ := GetModelProvider(modelClass)

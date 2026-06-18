@@ -25,15 +25,15 @@ import {
   useChatChatButtonInfo,
   useChatOpInfo,
 } from '@/components/studio-open-chat/hooks/use-chat-op-info';
-import CozeLogoPng from '@/assets/coze-logo.png';
+import QitanChatLogo from '@/assets/qitan-chat-logo.svg';
 
 import { type ChatHeaderProps } from '../type';
 
 import styles from './index.module.less';
 
 const ChatHeaderMobile = ({
-  iconUrl = CozeLogoPng,
-  title = 'Coze Bot',
+  iconUrl = QitanChatLogo,
+  title = '启探助手',
   extra,
   theme,
   isShowConversations,

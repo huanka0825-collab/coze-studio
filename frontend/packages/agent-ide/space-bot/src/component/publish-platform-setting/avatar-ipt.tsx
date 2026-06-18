@@ -19,8 +19,8 @@ import { type CSSProperties, type ForwardedRef, forwardRef } from 'react';
 import classNames from 'classnames';
 import { Avatar, Upload, type UploadProps } from '@coze-arch/coze-design';
 
-import CozeLogoPng from '../../assets/image/coze-logo.png';
-import CozeHoverPng from '../../assets/image/coze-avatar-hover.png';
+import QitanLogo from '../../assets/image/qitan-channel-avatar.svg';
+import QitanHover from '../../assets/image/qitan-channel-hover.svg';
 
 export interface IProp {
   value?: string;
@@ -81,11 +81,11 @@ const AvatarIpt = forwardRef(
           <Avatar
             hoverMask={
               <Avatar
-                src={CozeHoverPng}
+                src={QitanHover}
                 className="w-[80px] h-[80px] rounded-[20px] overflow-hidden"
               />
             }
-            src={value ?? CozeLogoPng}
+            src={value ?? QitanLogo}
             className="w-[80px] h-[80px] rounded-[20px] overflow-hidden"
           />
         </div>

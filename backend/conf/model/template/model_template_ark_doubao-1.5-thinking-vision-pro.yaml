@@ -1,10 +1,10 @@
 id: 60050
-name: Doubao-1.5-Thinking-Vision-Pro
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-1.5-Thinking-Vision-Pro
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: doubao-1-5-thinking-vision-pro 全新视觉深度思考模型，具备更强的通用多模态理解和推理能力，在 59 个公开评测基准中的 37 个上取得 SOTA 表现。
-    en: doubao-1-5-thinking-vision-pro is a brand-new visual deep thinking model, featuring stronger general multimodal understanding and reasoning abilities, achieving SOTA performance on 37 out of 59 public evaluation benchmarks.
+    zh: qitan-1-5-thinking-vision-pro 全新视觉深度思考模型，具备更强的通用多模态理解和推理能力，在 59 个公开评测基准中的 37 个上取得 SOTA 表现。
+    en: qitan-1-5-thinking-vision-pro is a brand-new visual deep thinking model, featuring stronger general multimodal understanding and reasoning abilities, achieving SOTA performance on 37 out of 59 public evaluation benchmarks.
 default_parameters:
     - name: temperature
       label:

@@ -1,6 +1,6 @@
 info:
-  description: 飞书知识库搜索Wiki、获取Wiki全部子节点列表
-  title: 飞书知识库
+  description: 启探协作知识库搜索Wiki、获取Wiki全部子节点列表
+  title: 启探协作知识库
   version: v1
 openapi: 3.0.1
 paths:

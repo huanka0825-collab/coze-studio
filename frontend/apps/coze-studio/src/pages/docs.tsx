@@ -18,7 +18,7 @@ import { useEffect } from 'react';
 
 const DocsRedirect = () => {
   useEffect(() => {
-    location.href = `https://www.coze.cn${location.pathname}`;
+    location.href = 'http://localhost:8000/#!/qitan-ai';
   }, []);
   return null;
 };

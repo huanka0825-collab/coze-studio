@@ -1,6 +1,6 @@
 info:
-  description: 飞书认证及授权
-  title: 飞书认证及授权
+  description: 启探协作认证及授权
+  title: 启探协作认证及授权
   version: v1
 openapi: 3.0.1
 paths:

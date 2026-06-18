@@ -73,7 +73,7 @@ interface PluginInfoConfirmProps {
 }
 
 const INITIAL_FORM_VALUES = {
-  headerList: [{ name: 'User-Agent', value: 'Coze/1.0' }],
+  headerList: [{ name: 'User-Agent', value: 'QitanAIWorkshop/1.0' }],
 };
 
 /**

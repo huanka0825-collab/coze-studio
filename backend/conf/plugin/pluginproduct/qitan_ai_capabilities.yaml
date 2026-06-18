@@ -1,0 +1,251 @@
+info:
+  description: 调用启探平台统一模型能力，用于图像、视觉、语音、3D、视频、音乐和硬件智能创作。
+  title: 启探 AI 能力中心
+  version: v1
+openapi: 3.0.1
+paths:
+  /api/qitan-ai/plugin/image:
+    post:
+      operationId: qitan_generate_image
+      summary: 生成课堂图片或作品素材
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CapabilityRequest"
+      responses:
+        "200":
+          description: 生成结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+  /api/qitan-ai/plugin/vision:
+    post:
+      operationId: qitan_understand_image
+      summary: 理解图片或作品截图
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - prompt
+              properties:
+                prompt:
+                  description: 给模型的分析要求
+                  type: string
+                imageUrl:
+                  description: 要分析的图片地址
+                  format: image_url
+                  type: string
+                  x-assist-type: image
+                image_url:
+                  description: 图片地址兼容字段
+                  format: image_url
+                  type: string
+                  x-assist-type: image
+      responses:
+        "200":
+          description: 识别结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+  /api/qitan-ai/plugin/tts:
+    post:
+      operationId: qitan_synthesize_speech
+      summary: 合成角色配音或课堂旁白
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CapabilityRequest"
+      responses:
+        "200":
+          description: 语音结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+  /api/qitan-ai/plugin/3d:
+    post:
+      operationId: qitan_generate_3d_model
+      summary: 生成 3D 模型草案
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CapabilityRequest"
+      responses:
+        "200":
+          description: 3D 结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+  /api/qitan-ai/plugin/video:
+    post:
+      operationId: qitan_generate_video
+      summary: 生成短视频或分镜片段
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CapabilityRequest"
+      responses:
+        "200":
+          description: 视频结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+  /api/qitan-ai/plugin/music:
+    post:
+      operationId: qitan_generate_music
+      summary: 生成配乐、主题曲或音效
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CapabilityRequest"
+      responses:
+        "200":
+          description: 音乐结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+  /api/qitan-ai/plugin/robotics:
+    post:
+      operationId: qitan_robotics_assistant
+      summary: 生成硬件实验或机器人行为建议
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CapabilityRequest"
+      responses:
+        "200":
+          description: 硬件智能结果
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilityResponse"
+        default:
+          description: 调用失败
+components:
+  schemas:
+    CapabilityRequest:
+      type: object
+      required:
+        - prompt
+      properties:
+        prompt:
+          description: 给模型的创作或分析要求
+          type: string
+        message:
+          description: prompt 的兼容字段
+          type: string
+        text:
+          description: prompt 的兼容字段
+          type: string
+        imageUrl:
+          description: 图片地址
+          format: image_url
+          type: string
+          x-assist-type: image
+        image_url:
+          description: 图片地址兼容字段
+          format: image_url
+          type: string
+          x-assist-type: image
+        size:
+          description: 图片尺寸，例如 1024x1024
+          type: string
+        aspectRatio:
+          description: 视频或图片比例，例如 16:9
+          type: string
+        duration:
+          description: 生成时长
+          type: string
+        lyrics:
+          description: 歌词或旁白文本
+          type: string
+        style:
+          description: 风格描述
+          type: string
+        genre:
+          description: 音乐类型
+          type: string
+        mood:
+          description: 情绪氛围
+          type: string
+        tempo:
+          description: 节奏速度
+          type: string
+        voice:
+          description: 语音音色
+          type: string
+        format:
+          description: 输出格式
+          type: string
+        quality:
+          description: 输出质量
+          type: string
+        seed:
+          description: 随机种子
+          type: integer
+        outputFormat:
+          description: 目标输出格式
+          type: string
+    CapabilityResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        abilityId:
+          type: string
+        output:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        videos:
+          type: array
+          items:
+            type: string
+        models3d:
+          type: array
+          items:
+            type: string
+        tracks:
+          type: array
+          items:
+            type: string
+        audio:
+          type: string
+        raw:
+          type: object
+servers:
+  - url: http://host.docker.internal:18000

@@ -1,10 +1,10 @@
 id: 64020
-name: Doubao-Seed-1.6
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-Seed-1.6
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: 全新多模态深度思考模型，同时支持 thinking、non-thinking、auto三种思考模式。其中 non-thinking 模型对比 doubao-1.5-pro-32k-250115 模型大幅提升。
-    en: 'A brand-new multimodal deep thinking model supports three thinking modes: thinking, non-thinking, and auto. Among them, the non-thinking model has significantly improved compared to the doubao-1.5-pro-32k-250115 model.'
+    zh: 全新多模态深度思考模型，同时支持 thinking、non-thinking、auto三种思考模式。其中 non-thinking 模型对比 qitan-1.5-pro-32k-250115 模型大幅提升。
+    en: 'A brand-new multimodal deep thinking model supports three thinking modes: thinking, non-thinking, and auto. Among them, the non-thinking model has significantly improved compared to the qitan-1.5-pro-32k-250115 model.'
 default_parameters:
     - name: temperature
       label:

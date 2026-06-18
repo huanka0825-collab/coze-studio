@@ -17,7 +17,7 @@ import classNames from 'classnames';
 import { useRequest } from 'ahooks';
 import { explore } from '@coze-studio/api-schema';
 import { I18n } from '@coze-arch/i18n';
-import { IconCozDesktopFill, IconCozCoze } from '@coze-arch/coze-design/icons';
+import { IconCozDesktopFill } from '@coze-arch/coze-design/icons';
 import { useSpaceStore } from '@coze-arch/bot-studio-store';
 import { UICompositionModalSider } from '@coze-arch/bot-semi';
 import { IconMyTools, IconTeamTools } from '@coze-arch/bot-icons';
@@ -118,8 +118,8 @@ export const PluginFilter: React.FC<PluginFilterProps> = ({
                 })}
                 onClick={() => onChangeAfterDiff(PluginFilterType.Coze)}
               >
-                <IconCozCoze className={s['tool-tag-list-cell-icon']} />
-                Coze.cn 插件
+                <IconTeamTools className={s['tool-tag-list-cell-icon']} />
+                启探能力库插件
               </div>
             </div>
           ) : null}

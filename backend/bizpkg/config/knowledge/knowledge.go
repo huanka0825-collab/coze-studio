@@ -59,7 +59,7 @@ func (c *KnowledgeConfig) GetKnowledgeConfig(ctx context.Context) (*config.Knowl
 }
 
 func getKnowledgeConfigurationFromOldConfig() *config.KnowledgeConfig {
-	embeddingTypeStr := strings.ToUpper(os.Getenv("EMBEDDING_TYPE"))
+	embeddingTypeStr := strings.ToUpper(getEmbeddingProtocol())
 	baseURLKey := fmt.Sprintf("%s_EMBEDDING_BASE_URL", embeddingTypeStr)
 	apiKeyKey := fmt.Sprintf("%s_EMBEDDING_API_KEY", embeddingTypeStr)
 	modelKey := fmt.Sprintf("%s_EMBEDDING_MODEL", embeddingTypeStr)
@@ -71,12 +71,12 @@ func getKnowledgeConfigurationFromOldConfig() *config.KnowledgeConfig {
 			MaxBatchSize: envkey.GetI32D("EMBEDDING_MAX_BATCH_SIZE", 100),
 			Connection: &config.EmbeddingConnection{
 				BaseConnInfo: &config.BaseConnectionInfo{
-					BaseURL: envkey.GetString(baseURLKey),
-					APIKey:  envkey.GetString(apiKeyKey),
-					Model:   envkey.GetString(modelKey),
+					BaseURL: getFirstEnv(baseURLKey, "QITAN_EMBEDDING_BASE_URL"),
+					APIKey:  getFirstEnv(apiKeyKey, "QITAN_EMBEDDING_API_KEY"),
+					Model:   getFirstEnv(modelKey, "QITAN_EMBEDDING_MODEL"),
 				},
 				EmbeddingInfo: &config.EmbeddingInfo{
-					Dims: envkey.GetI32D(dimsKey, 1024),
+					Dims: envkey.GetI32D(dimsKey, envkey.GetI32D("QITAN_EMBEDDING_DIMS", 1024)),
 				},
 				Ark: &config.ArkConnInfo{
 					APIType: envkey.GetStringD("ARK_EMBEDDING_API_TYPE", "text_api"),
@@ -126,6 +126,15 @@ func getKnowledgeConfigurationFromOldConfig() *config.KnowledgeConfig {
 	return conf
 }
 
+func getFirstEnv(keys ...string) string {
+	for _, key := range keys {
+		if value := strings.TrimSpace(os.Getenv(key)); value != "" {
+			return value
+		}
+	}
+	return ""
+}
+
 func getArkEmbeddingAPIKey() string {
 	if len(envkey.GetString("ARK_EMBEDDING_API_KEY")) > 0 {
 		return envkey.GetString("ARK_EMBEDDING_API_KEY")
@@ -138,7 +147,7 @@ func (c *KnowledgeConfig) SaveKnowledgeConfig(ctx context.Context, v *config.Kno
 }
 
 func getEmbeddingType() config.EmbeddingType {
-	embeddingTypeStr := os.Getenv("EMBEDDING_TYPE")
+	embeddingTypeStr := getEmbeddingProtocol()
 
 	switch embeddingTypeStr {
 	case "openai":
@@ -154,6 +163,16 @@ func getEmbeddingType() config.EmbeddingType {
 	}
 
 	return config.EmbeddingType_Ark
+}
+
+func getEmbeddingProtocol() string {
+	if protocol := getFirstEnv("EMBEDDING_TYPE", "QITAN_EMBEDDING_PROTOCOL"); protocol != "" {
+		return protocol
+	}
+	if getFirstEnv("QITAN_EMBEDDING_BASE_URL") != "" {
+		return "openai"
+	}
+	return ""
 }
 
 func getRerankType() config.RerankType {

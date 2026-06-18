@@ -1,10 +1,10 @@
 id: 60010
-name: Doubao-1.5-Lite
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-1.5-Lite
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: Doubao-1.5-lite，全新一代轻量版模型，极致响应速度，效果与时延均达到全球一流水平。
-    en: Doubao-1.5-lite, the new generation lightweight model, delivers ultra-fast response speed with both performance and latency reaching world-class standards.
+    zh: Qitan-1.5-lite，全新一代轻量版模型，极致响应速度，效果与时延均达到全球一流水平。
+    en: Qitan-1.5-lite, the new generation lightweight model, delivers ultra-fast response speed with both performance and latency reaching world-class standards.
 default_parameters:
     - name: temperature
       label:

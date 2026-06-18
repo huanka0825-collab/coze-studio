@@ -44,7 +44,7 @@ export const LibraryHeader: React.FC<{
         icon={<IconCozPlus />}
         data-testid="workspace.library.header.create"
       >
-        {I18n.t('library_resource')}
+        创建资源
       </Button>
     </Menu>
   </div>

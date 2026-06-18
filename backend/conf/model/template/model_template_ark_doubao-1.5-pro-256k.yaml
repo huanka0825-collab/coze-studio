@@ -1,10 +1,10 @@
 id: 60030
-name: Doubao-1.5-Pro-256k
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-1.5-Pro-256k
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: doubao-1.5-pro-256k，基于doubao-1.5-Pro全面升级版，整体效果大幅提升10%。更高性能、更大窗口、超高性价比，适用于更广泛的应用场景。
-    en: doubao-1.5-pro-256k is a fully upgraded version based on doubao-1.5-Pro, with an overall performance improvement of 10%. It offers higher performance, a larger context window, and exceptional cost-effectiveness, making it suitable for a wider range of application scenarios.
+    zh: qitan-1.5-pro-256k，基于qitan-1.5-Pro全面升级版，整体效果大幅提升10%。更高性能、更大窗口、超高性价比，适用于更广泛的应用场景。
+    en: qitan-1.5-pro-256k is a fully upgraded version based on qitan-1.5-Pro, with an overall performance improvement of 10%. It offers higher performance, a larger context window, and exceptional cost-effectiveness, making it suitable for a wider range of application scenarios.
 default_parameters:
     - name: temperature
       label:

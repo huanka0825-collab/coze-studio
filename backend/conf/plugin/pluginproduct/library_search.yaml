@@ -1,5 +1,5 @@
 info:
-  description: 根据文库文档标题关键字，搜索豆柴文库内容和网页 URL
+  description: 根据文库文档标题关键字，搜索启探文库内容和网页 URL
   title: 文库搜索
   version: v1
 openapi: 3.0.1
@@ -68,6 +68,6 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 根据关键词检索豆柴文档
+      summary: 根据关键词检索启探文档
 servers:
   - url: https://www.douchai.cn

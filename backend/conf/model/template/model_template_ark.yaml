@@ -1,10 +1,10 @@
 id: 60000
-name: Doubao Model
-icon_uri: default_icon/doubao_v2.png
+name: Qitan Model
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: 豆包模型简介
-    en: doubao model description
+    zh: 启探模型简介
+    en: qitan model description
 default_parameters:
     - name: temperature
       label:

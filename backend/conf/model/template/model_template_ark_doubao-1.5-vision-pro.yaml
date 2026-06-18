@@ -1,10 +1,10 @@
 id: 60070
-name: Doubao-1.5-Vision-Pro
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-1.5-Vision-Pro
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: doubao-1.5-vision-pro，全新升级的多模态大模型，支持任意分辨率和极端长宽比图像识别，增强视觉推理、文档识别、细节信息理解和指令遵循能力。
-    en: doubao-1.5-vision-pro is a newly upgraded multimodal large model that supports image recognition at any resolution and extreme aspect ratios, enhancing visual reasoning, document recognition, detailed information comprehension, and instruction-following capabilities.
+    zh: qitan-1.5-vision-pro，全新升级的多模态大模型，支持任意分辨率和极端长宽比图像识别，增强视觉推理、文档识别、细节信息理解和指令遵循能力。
+    en: qitan-1.5-vision-pro is a newly upgraded multimodal large model that supports image recognition at any resolution and extreme aspect ratios, enhancing visual reasoning, document recognition, detailed information comprehension, and instruction-following capabilities.
 default_parameters:
     - name: temperature
       label:

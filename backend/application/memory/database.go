@@ -540,11 +540,11 @@ func (d *DatabaseApplicationService) GetConnectorName(ctx context.Context, req *
 		ConnectorList: []*table.ConnectorInfo{
 			{
 				ConnectorID:   consts.CozeConnectorID,
-				ConnectorName: "Coze",
+				ConnectorName: "启探开放渠道",
 			},
 			{
 				ConnectorID:   consts.WebSDKConnectorID,
-				ConnectorName: "Chat SDK",
+				ConnectorName: "聊天 SDK",
 			},
 			{
 				ConnectorID:   consts.APIConnectorID,

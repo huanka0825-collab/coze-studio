@@ -152,6 +152,7 @@ func loadPluginProductMeta(ctx context.Context, basePath string) (err error) {
 		if !checkPluginMetaInfo(ctx, m) {
 			continue
 		}
+		expandPluginProductEnv(m)
 
 		err = m.Manifest.Validate(true)
 		if err != nil {
@@ -254,6 +255,14 @@ func loadPluginProductMeta(ctx context.Context, basePath string) (err error) {
 	}
 
 	return nil
+}
+
+func expandPluginProductEnv(meta *pluginProductMeta) {
+	if meta == nil || meta.Manifest == nil || meta.Manifest.Auth == nil {
+		return
+	}
+
+	meta.Manifest.Auth.Payload = os.ExpandEnv(meta.Manifest.Auth.Payload)
 }
 
 func checkPluginMetaInfo(ctx context.Context, m *pluginProductMeta) (continued bool) {

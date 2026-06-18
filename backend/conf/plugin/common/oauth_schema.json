@@ -2,37 +2,43 @@
   {
     "key": "Authorization Code",
     "value": 4,
-    "label": "Authorization Code",
+    "label": "授权码模式",
     "items": [
       {
         "key": "client_id",
+        "label": "客户端 ID",
         "type": "text",
         "max_len": 100,
         "required": true
       },
       {
         "key": "client_secret",
+        "label": "客户端密钥",
         "type": "text",
         "max_len": 100,
         "required": true
       },
       {
         "key": "client_url",
+        "label": "接口地址",
         "type": "url",
         "required": true
       },
       {
         "key": "scope",
+        "label": "授权范围",
         "type": "text",
         "max_len": 500
       },
       {
         "key": "authorization_url",
+        "label": "授权地址",
         "type": "url",
         "required": true
       },
       {
         "key": "authorization_content_type",
+        "label": "授权内容类型",
         "type": "text",
         "default": "application/json",
         "required": true

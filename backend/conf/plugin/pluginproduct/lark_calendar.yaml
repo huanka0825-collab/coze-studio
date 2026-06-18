@@ -1,6 +1,6 @@
 info:
-  description: 在飞书上日历上创建日程、更新日程、删除日程、查询日程信息
-  title: 飞书日历
+  description: 在启探协作上日历上创建日程、更新日程、删除日程、查询日程信息
+  title: 启探协作日历
   version: v1
 openapi: 3.0.1
 paths:

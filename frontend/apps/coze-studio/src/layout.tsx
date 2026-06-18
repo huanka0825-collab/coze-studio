@@ -19,5 +19,11 @@ import { GlobalLayout, useAppInit } from '@coze-foundation/global-adapter';
 export const Layout = () => {
   useAppInit();
 
-  return <GlobalLayout />;
+  return (
+    <div className="qitan-studio-frame">
+      <div className="qitan-studio-frame__surface">
+        <GlobalLayout />
+      </div>
+    </div>
+  );
 };

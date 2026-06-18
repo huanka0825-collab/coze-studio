@@ -1,12 +1,12 @@
 info:
   description: |-
-    飞书消息，支持以下功能
+    启探协作消息，支持以下功能
     
-    1. 使用飞书自定义机器人 webhook 发送消息；
-    2. 使用飞书应用机器人发送消息；
+    1. 使用启探协作自定义机器人 webhook 发送消息；
+    2. 使用启探协作应用机器人发送消息；
     3. 获取指定单聊、群聊的消息历史；
     4. 获取指定话题的消息历史；
-  title: 飞书消息
+  title: 启探协作消息
   version: v1
 openapi: 3.0.1
 paths:
@@ -14,7 +14,7 @@ paths:
     get:
       operationId: get_chat_messages
       parameters:
-        - description: appid 是飞书开放平台应用的唯一标识，创建应用后获得。
+        - description: appid 是启探协作开放平台应用的唯一标识，创建应用后获得。
           in: header
           name: appid
           schema:
@@ -184,7 +184,7 @@ paths:
     get:
       operationId: get_thread_messages
       parameters:
-        - description: appid 是飞书开放平台应用的唯一标识，创建应用后获得。
+        - description: appid 是启探协作开放平台应用的唯一标识，创建应用后获得。
           in: header
           name: appid
           schema:
@@ -367,7 +367,7 @@ paths:
           required: true
           schema:
             type: string
-        - description: appid 是飞书开放平台应用的唯一标识，创建应用后获得。
+        - description: appid 是启探协作开放平台应用的唯一标识，创建应用后获得。
           in: header
           name: appid
           schema:
@@ -450,7 +450,7 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 使用应用机器人发送飞书消息
+      summary: 使用应用机器人发送启探协作消息
   /message/send_webhook_message:
     post:
       operationId: send_webhook_message
@@ -494,6 +494,6 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 使用飞书自定义机器人 webhook 发送消息
+      summary: 使用启探协作自定义机器人 webhook 发送消息
 servers:
   - url: https://lark-plugin-api.solutionsuite.cn/lark-plugin

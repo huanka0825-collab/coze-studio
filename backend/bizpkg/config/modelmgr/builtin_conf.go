@@ -46,7 +46,7 @@ func getOldKnowledgeBuiltinChatModelConfig() *Model {
 		return nil
 	}
 
-	typeStr := strings.ToUpper(os.Getenv("BUILTIN_CM_TYPE"))
+	typeStr := strings.ToUpper(getQitanLLMProtocol())
 
 	if typeStr == "" {
 		return nil
@@ -61,9 +61,9 @@ func getOldKnowledgeBuiltinChatModelConfig() *Model {
 			Provider: provider,
 			Connection: &config.Connection{
 				BaseConnInfo: &config.BaseConnectionInfo{
-					BaseURL: envkey.GetString(baseURLKey),
-					Model:   envkey.GetString(modelKey),
-					APIKey:  envkey.GetString(apiKeyKey),
+					BaseURL: getFirstEnv(baseURLKey, "QITAN_LLM_BASE_URL", "QITAN_AI_BASE_URL"),
+					Model:   getFirstEnv(modelKey, "QITAN_LLM_MODEL", "QITAN_AI_MODEL"),
+					APIKey:  getFirstEnv(apiKeyKey, "QITAN_LLM_API_KEY", "QITAN_AI_API_KEY"),
 				},
 				Gemini: &config.GeminiConnInfo{
 					Backend:  envkey.GetI32D("BUILTIN_CM_GEMINI_BACKEND", 1),
@@ -78,8 +78,27 @@ func getOldKnowledgeBuiltinChatModelConfig() *Model {
 	}
 }
 
+func getFirstEnv(keys ...string) string {
+	for _, key := range keys {
+		if value := strings.TrimSpace(os.Getenv(key)); value != "" {
+			return value
+		}
+	}
+	return ""
+}
+
+func getQitanLLMProtocol() string {
+	if protocol := getFirstEnv("BUILTIN_CM_TYPE", "QITAN_LLM_PROTOCOL"); protocol != "" {
+		return protocol
+	}
+	if getFirstEnv("QITAN_LLM_BASE_URL", "QITAN_AI_BASE_URL") != "" {
+		return "openai"
+	}
+	return ""
+}
+
 func getKnowledgeBuiltinModelClass() developer_api.ModelClass {
-	builtinChatModelTypeStr := os.Getenv("BUILTIN_CM_TYPE")
+	builtinChatModelTypeStr := getQitanLLMProtocol()
 	switch builtinChatModelTypeStr {
 	case "openai":
 		return developer_api.ModelClass_GPT

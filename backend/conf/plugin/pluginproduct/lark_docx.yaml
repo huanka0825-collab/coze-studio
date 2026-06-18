@@ -1,6 +1,6 @@
 info:
   description: |-
-    飞书云文档，支持以下操作：
+    启探协作云文档，支持以下操作：
     
     1. 创建文档；
     2. 在文档中新增内容，支持 纯文本或者 markdown 格式；
@@ -9,7 +9,7 @@ info:
     5. 获取文档的基本信息；
     6. 搜索文档类型的文档；
     7. 搜索 PPT 类型的文档；
-  title: 飞书云文档
+  title: 启探协作云文档
   version: v1
 openapi: 3.0.1
 paths:
@@ -547,6 +547,6 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 上传素材到飞书云文档、文档空间、多维表格、电子表格。上传成功后获取对应素材的飞书file_token。详见飞书开发文档 https://open.larkoffice.com/document/server-docs/docs/drive-v1/media/introduction
+      summary: 上传素材到启探协作云文档、文档空间、多维表格、电子表格。上传成功后获取对应素材的启探协作file_token。详见启探协作开发文档 https://open.larkoffice.com/document/server-docs/docs/drive-v1/media/introduction
 servers:
   - url: https://lark-plugin-api.solutionsuite.cn/lark-plugin

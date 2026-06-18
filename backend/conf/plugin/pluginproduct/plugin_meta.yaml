@@ -8,8 +8,8 @@
     schema_version: v1
     name_for_model: wenkusousuo
     name_for_human: 文库搜索
-    description_for_model: 根据文库文档标题关键字，搜索豆柴文库内容和网页 URL
-    description_for_human: 根据文库文档标题关键字，搜索豆柴文库内容和网页 URL
+    description_for_model: 根据文库文档标题关键字，搜索启探文库内容和网页 URL
+    description_for_human: 根据文库文档标题关键字，搜索启探文库内容和网页 URL
     auth:
       type: none
     logo_url: official_plugin_icon/plugin_library_search.png
@@ -19,7 +19,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
         - name: X-Requested-With
           value: XMLHttpRequest
       path: [ ]
@@ -54,7 +54,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -118,7 +118,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -147,7 +147,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -206,7 +206,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -235,7 +235,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -268,7 +268,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -301,9 +301,9 @@
   manifest:
     schema_version: v1
     name_for_model: feishurenzhengjishouquan
-    name_for_human: 飞书认证及授权
-    description_for_model: 飞书认证及授权
-    description_for_human: 飞书认证及授权
+    name_for_human: 启探协作认证及授权
+    description_for_model: 启探协作认证及授权
+    description_for_human: 启探协作认证及授权
     auth:
       type: none
     logo_url: official_plugin_icon/plugin_lark_authentication_authorization.png
@@ -313,7 +313,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -330,23 +330,23 @@
   manifest:
     schema_version: v1
     name_for_model: feishuxiaoxi
-    name_for_human: 飞书消息
-    description_for_model: '飞书消息，支持以下功能
+    name_for_human: 启探协作消息
+    description_for_model: '启探协作消息，支持以下功能
 
 
-      1. 使用飞书自定义机器人 webhook 发送消息；
+      1. 使用启探协作自定义机器人 webhook 发送消息；
 
-      2. 使用飞书应用机器人发送消息；
+      2. 使用启探协作应用机器人发送消息；
 
       3. 获取指定单聊、群聊的消息历史；
 
       4. 获取指定话题的消息历史；'
-    description_for_human: '飞书消息，支持以下功能
+    description_for_human: '启探协作消息，支持以下功能
 
 
-      1. 使用飞书自定义机器人 webhook 发送消息；
+      1. 使用启探协作自定义机器人 webhook 发送消息；
 
-      2. 使用飞书应用机器人发送消息；
+      2. 使用启探协作应用机器人发送消息；
 
       3. 获取指定单聊、群聊的消息历史；
 
@@ -363,7 +363,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -392,8 +392,8 @@
   manifest:
     schema_version: v1
     name_for_model: feishuduoweibiaoge
-    name_for_human: 飞书多维表格
-    description_for_model: '飞书多维表格，支持以下功能：
+    name_for_human: 启探协作多维表格
+    description_for_model: '启探协作多维表格，支持以下功能：
 
 
       1. 创建多维表格；
@@ -413,7 +413,7 @@
       8. 查询多维表格数据表中的记录；
 
       9. 搜索多维表格类型的文档；'
-    description_for_human: '飞书多维表格，支持以下功能：
+    description_for_human: '启探协作多维表格，支持以下功能：
 
 
       1. 创建多维表格；
@@ -447,7 +447,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
   tools:
     - tool_id: 160001
       deprecated: false
@@ -514,8 +514,8 @@
   manifest:
     schema_version: v1
     name_for_model: feishudianzibiaoge
-    name_for_human: 飞书电子表格
-    description_for_model: '对飞书电子表格做操作，包含以下操作：
+    name_for_human: 启探协作电子表格
+    description_for_model: '对启探协作电子表格做操作，包含以下操作：
 
       1.创建电子表格；
 
@@ -530,7 +530,7 @@
       6.获取所有工作表；
 
       7.读取工作表行列内容；'
-    description_for_human: '对飞书电子表格做操作，包含以下操作：
+    description_for_human: '对启探协作电子表格做操作，包含以下操作：
 
       1.创建电子表格；
 
@@ -557,7 +557,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
   tools:
@@ -614,25 +614,25 @@
   manifest:
     schema_version: v1
     name_for_model: feishurenwu
-    name_for_human: 飞书任务
-    description_for_model: '调用飞书开放平台任务相关API，支持以下操作：
+    name_for_human: 启探协作任务
+    description_for_model: '调用启探协作开放平台任务相关API，支持以下操作：
 
-      1.创建任务：输入任务标题、开始时间、结束时间等信息创建飞书任务；
+      1.创建任务：输入任务标题、开始时间、结束时间等信息创建启探协作任务；
 
-      2.更新任务：对飞书任务的任务标题、任务时间等信息做修改；
+      2.更新任务：对启探协作任务的任务标题、任务时间等信息做修改；
 
-      3.删除任务：对创建的飞书任务做删除；
+      3.删除任务：对创建的启探协作任务做删除；
 
-      4.列出所有任务：查询用户下单所有飞书任务；'
-    description_for_human: '调用飞书开放平台任务相关API，支持以下操作：
+      4.列出所有任务：查询用户下单所有启探协作任务；'
+    description_for_human: '调用启探协作开放平台任务相关API，支持以下操作：
 
-      1.创建任务：输入任务标题、开始时间、结束时间等信息创建飞书任务；
+      1.创建任务：输入任务标题、开始时间、结束时间等信息创建启探协作任务；
 
-      2.更新任务：对飞书任务的任务标题、任务时间等信息做修改；
+      2.更新任务：对启探协作任务的任务标题、任务时间等信息做修改；
 
-      3.删除任务：对创建的飞书任务做删除；
+      3.删除任务：对创建的启探协作任务做删除；
 
-      4.列出所有任务：查询用户下单所有飞书任务；'
+      4.列出所有任务：查询用户下单所有启探协作任务；'
     auth:
       type: oauth
       sub_type: authorization_code
@@ -646,7 +646,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
   tools:
     - tool_id: 180001
@@ -674,8 +674,8 @@
   manifest:
     schema_version: v1
     name_for_model: feishuyunwendang
-    name_for_human: 飞书云文档
-    description_for_model: '飞书云文档，支持以下操作：
+    name_for_human: 启探协作云文档
+    description_for_model: '启探协作云文档，支持以下操作：
 
 
       1. 创建文档；
@@ -691,7 +691,7 @@
       6. 搜索文档类型的文档；
 
       7. 搜索 PPT 类型的文档；'
-    description_for_human: '飞书云文档，支持以下操作：
+    description_for_human: '启探协作云文档，支持以下操作：
 
 
       1. 创建文档；
@@ -718,7 +718,7 @@
     common_params:
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
       body: [ ]
@@ -768,9 +768,9 @@
   manifest:
     schema_version: v1
     name_for_model: feishuzhishiku
-    name_for_human: 飞书知识库
-    description_for_model: 飞书知识库搜索Wiki、获取Wiki全部子节点列表
-    description_for_human: 飞书知识库搜索Wiki、获取Wiki全部子节点列表
+    name_for_human: 启探协作知识库
+    description_for_model: 启探协作知识库搜索Wiki、获取Wiki全部子节点列表
+    description_for_human: 启探协作知识库搜索Wiki、获取Wiki全部子节点列表
     auth:
       type: oauth
       sub_type: authorization_code
@@ -782,7 +782,7 @@
     common_params:
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
       path: [ ]
       query: [ ]
       body: [ ]
@@ -800,9 +800,9 @@
   manifest:
     schema_version: v1
     name_for_model: feishurili
-    name_for_human: 飞书日历
-    description_for_model: 在飞书上日历上创建日程、更新日程、删除日程、查询日程信息
-    description_for_human: 在飞书上日历上创建日程、更新日程、删除日程、查询日程信息
+    name_for_human: 启探协作日历
+    description_for_model: 在启探协作上日历上创建日程、更新日程、删除日程、查询日程信息
+    description_for_human: 在启探协作上日历上创建日程、更新日程、删除日程、查询日程信息
     auth:
       type: oauth
       sub_type: authorization_code
@@ -817,7 +817,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
   tools:
     - tool_id: 210001
       deprecated: false
@@ -863,7 +863,7 @@
       body: [ ]
       header:
         - name: User-Agent
-          value: Coze/1.0
+          value: Qitan/1.0
     auth:
       type: service_http
       key: Authorization
@@ -906,3 +906,59 @@
       deprecated: false
       method: get
       sub_url: /v5/place/around
+- plugin_id: 23
+  product_id: 9100230000000000001
+  deprecated: false
+  version: v1.0.0
+  openapi_doc_file: qitan_ai_capabilities.yaml
+  plugin_type: 1
+  manifest:
+    schema_version: v1
+    name_for_model: qitan_ai_capabilities
+    name_for_human: 启探 AI 能力中心
+    description_for_model: 调用启探平台统一模型能力，面向课堂创作、智能体搭建和学生作品生成，支持图像、视觉理解、语音合成、3D、视频、音乐和硬件智能建议。
+    description_for_human: 调用启探平台统一模型能力，支持图像、视觉、语音、3D、视频、音乐和硬件智能创作。
+    logo_url: official_plugin_icon/plugin_library_search.png
+    api:
+      type: openapi
+    common_params:
+      path: [ ]
+      query: [ ]
+      body: [ ]
+      header:
+        - name: User-Agent
+          value: Qitan/1.0
+    auth:
+      type: service_http
+      key: Authorization
+      sub_type: token/api_key
+      payload: '{"key":"Authorization","service_token":"Bearer ${QITAN_AI_PLUGIN_GATEWAY_TOKEN}","location":"Header"}'
+  tools:
+    - tool_id: 230001
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/image
+    - tool_id: 230002
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/vision
+    - tool_id: 230003
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/tts
+    - tool_id: 230004
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/3d
+    - tool_id: 230005
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/video
+    - tool_id: 230006
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/music
+    - tool_id: 230007
+      deprecated: false
+      method: post
+      sub_url: /api/qitan-ai/plugin/robotics

@@ -20,8 +20,8 @@ import { extractEnvValue } from './utils/config-helper';
 import { volcanoConfigs } from './configs/volcano';
 
 const domainMap = {
-  DOMAIN_RELEASE_CN: 'www.coze.cn',
-  DOMAIN_RELEASE_OVERSEA: 'www.coze.com',
+  DOMAIN_RELEASE_CN: 'localhost:8888',
+  DOMAIN_RELEASE_OVERSEA: 'localhost:8888',
 };
 
 const APP_ID = extractEnvValue<number>({
@@ -56,31 +56,31 @@ const APP_KEY = extractEnvValue<string>({
 
 const FLOW_BRAND_NAME = extractEnvValue<string>({
   cn: {
-    boe: '豆包',
-    inhouse: '豆包',
-    release: '豆包',
+    boe: '启探助手',
+    inhouse: '启探助手',
+    release: '启探助手',
   },
   sg: {
-    inhouse: 'Cici',
-    release: 'Cici',
+    inhouse: 'Qitan Assistant',
+    release: 'Qitan Assistant',
   },
   va: {
-    release: 'Cici',
+    release: 'Qitan Assistant',
   },
 });
 
 const BOT_BRAND_NAME = extractEnvValue<string>({
   cn: {
-    boe: '扣子',
-    inhouse: '扣子',
-    release: '扣子',
+    boe: '启探智能体工坊',
+    inhouse: '启探智能体工坊',
+    release: '启探智能体工坊',
   },
   sg: {
-    inhouse: 'Coze',
-    release: 'Coze',
+    inhouse: 'Qitan Agent Workshop',
+    release: 'Qitan Agent Workshop',
   },
   va: {
-    release: 'Coze',
+    release: 'Qitan Agent Workshop',
   },
 });
 
@@ -451,13 +451,12 @@ export const COZE_LARK_APP = extractEnvValue<string>({
 });
 
 const legalEnvs = {
-  TERMS_OF_SERVICE:
-    'https://www.coze.com/docs/guides/terms_of_service?_lang=en',
-  PRIVATE_POLICY: 'https://www.coze.com/docs/guides/policy?_lang=en',
-  CN_TERMS_OF_SERVICE: 'https://www.coze.cn/docs/guides/terms-of-service',
-  CN_PRIVATE_POLICY: 'https://www.coze.cn/docs/guides/privacy',
-  VOLC_TERMS_OF_SERVICE: 'https://www.volcengine.com/docs/6256/64903',
-  VOLC_PRIVATE_POLICY: 'https://www.volcengine.com/docs/6256/64902',
+  TERMS_OF_SERVICE: 'http://localhost:8000/#!/qitan-ai',
+  PRIVATE_POLICY: 'http://localhost:8000/#!/qitan-ai',
+  CN_TERMS_OF_SERVICE: 'http://localhost:8000/#!/qitan-ai',
+  CN_PRIVATE_POLICY: 'http://localhost:8000/#!/qitan-ai',
+  VOLC_TERMS_OF_SERVICE: 'http://localhost:8000/#!/qitan-ai',
+  VOLC_PRIVATE_POLICY: 'http://localhost:8000/#!/qitan-ai',
 };
 
 const MONACO_EDITOR_PUBLIC_PATH = '/';
@@ -469,11 +468,11 @@ const FEEL_GOOD_HOST = extractEnvValue<string>({
     release: '',
   },
   sg: {
-    inhouse: 'survey.coze.com',
-    release: 'survey.coze.com',
+    inhouse: '',
+    release: '',
   },
   va: {
-    release: 'survey.coze.com',
+    release: '',
   },
 });
 const feelGoodEnvs = {
@@ -619,14 +618,14 @@ const COZE_DOMAIN = extractEnvValue<string | null>({
   cn: {
     boe: '',
     inhouse: '',
-    release: 'www.coze.cn',
+    release: 'localhost:8888',
   },
   sg: {
     inhouse: '',
-    release: 'www.coze.com',
+    release: 'localhost:8888',
   },
   va: {
-    release: 'www.coze.com',
+    release: 'localhost:8888',
   },
 });
 

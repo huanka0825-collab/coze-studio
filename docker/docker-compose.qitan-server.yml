@@ -1,0 +1,6 @@
+services:
+  coze-server:
+    image: qitan-agent-studio-server:local
+    build:
+      context: ../
+      dockerfile: backend/Dockerfile

@@ -41,9 +41,9 @@ func NewService(tos storage.Storage) Connector {
 
 var i18n2ConnectorDesc = map[i18n.Locale]map[int64]string{
 	i18n.LocaleEN: {
-		consts.WebSDKConnectorID: "Deploy your project to the Chat SDK. This publishing method is supported only for projects that have created a conversation flow, please refer to [Installation Guidelines](coze://web-sdk-guide) for installation methods.",
+		consts.WebSDKConnectorID: "Deploy your project to the Qitan Chat SDK. This publishing method is supported only for projects that have created a conversation flow, please refer to [Installation Guidelines](coze://web-sdk-guide) for installation methods.",
 		consts.APIConnectorID:    "Supports OAuth 2.0 and personal access tokens",
-		consts.CozeConnectorID:   "Coze",
+		consts.CozeConnectorID:   "Qitan Open Channel",
 	},
 }
 
@@ -52,9 +52,9 @@ func (c *connectorImpl) AllConnectorInfo(ctx context.Context) []*entity.Connecto
 		{
 			Connector: &connector.Connector{
 				ID:   consts.WebSDKConnectorID,
-				Name: "Chat SDK",
+				Name: "聊天 SDK",
 				URI:  "default_icon/connector-chat-sdk.jpg",
-				Desc: "将项目部署到Chat SDK。仅创建过对话流的项目支持该发布方式,安装方式请查看[安装指引](coze://web-sdk-guide)",
+				Desc: "将项目部署到启探聊天 SDK。仅创建过对话流的项目支持该发布方式，安装方式请查看[安装指引](coze://web-sdk-guide)",
 			},
 		},
 		{
@@ -68,9 +68,9 @@ func (c *connectorImpl) AllConnectorInfo(ctx context.Context) []*entity.Connecto
 		{
 			Connector: &connector.Connector{
 				ID:   consts.CozeConnectorID,
-				Name: "coze",
+				Name: "启探开放渠道",
 				URI:  "default_icon/connector-coze.png",
-				Desc: "Coze",
+				Desc: "启探开放渠道",
 			},
 		},
 	}

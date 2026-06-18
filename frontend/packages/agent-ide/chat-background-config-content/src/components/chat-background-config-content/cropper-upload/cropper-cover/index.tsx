@@ -149,7 +149,7 @@ export const CropperCover: React.FC<CropperCoverProps> = ({
                         'text-white': !notHasBackground,
                       })}
                     >
-                      {index === 1 ? 'Glory' : 'Coze'}
+                      {index === 1 ? '启探助手' : '课程同学'}
                     </div>
                     <BubbleContent
                       width={item.width}

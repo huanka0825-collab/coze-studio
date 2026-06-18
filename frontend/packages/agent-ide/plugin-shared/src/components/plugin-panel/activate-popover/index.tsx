@@ -52,10 +52,7 @@ export const ActivatePopover: FC<PropsWithChildren<ActivatePopoverProps>> = ({
               color="aiplus"
               hideIcon={true}
               onClick={() => {
-                window.open(
-                  `https://www.coze.cn/store/plugin/${id}?from=coze-studio-open`,
-                  '_blank',
-                );
+                window.open('/explore/plugin', '_blank');
               }}
             >
               去开通

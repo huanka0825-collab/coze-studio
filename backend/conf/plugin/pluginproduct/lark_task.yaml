@@ -1,11 +1,11 @@
 info:
   description: |-
-    调用飞书开放平台任务相关API，支持以下操作：
-    1.创建任务：输入任务标题、开始时间、结束时间等信息创建飞书任务；
-    2.更新任务：对飞书任务的任务标题、任务时间等信息做修改；
-    3.删除任务：对创建的飞书任务做删除；
-    4.列出所有任务：查询用户下单所有飞书任务；
-  title: 飞书任务
+    调用启探协作开放平台任务相关API，支持以下操作：
+    1.创建任务：输入任务标题、开始时间、结束时间等信息创建启探协作任务；
+    2.更新任务：对启探协作任务的任务标题、任务时间等信息做修改；
+    3.删除任务：对创建的启探协作任务做删除；
+    4.列出所有任务：查询用户下单所有启探协作任务；
+  title: 启探协作任务
   version: v1
 openapi: 3.0.1
 paths:
@@ -138,7 +138,7 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 创建飞书任务,根据输入的任务标题、任务时间创建飞书任务
+      summary: 创建启探协作任务,根据输入的任务标题、任务时间创建启探协作任务
   /task/delete_task:
     delete:
       operationId: delete_task
@@ -172,7 +172,7 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 删除飞书任务
+      summary: 删除启探协作任务
   /task/list_tasks:
     get:
       operationId: list_tasks
@@ -326,7 +326,7 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 列取飞书任务列表
+      summary: 列取启探协作任务列表
   /task/update_task:
     patch:
       operationId: update_task
@@ -404,6 +404,6 @@ paths:
           description: new desc
         default:
           description: ""
-      summary: 更新飞书任务
+      summary: 更新启探协作任务
 servers:
   - url: https://lark-plugin-api.solutionsuite.cn/lark-plugin

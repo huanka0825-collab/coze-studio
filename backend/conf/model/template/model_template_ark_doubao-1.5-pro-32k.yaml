@@ -1,10 +1,10 @@
 id: 60020
-name: Doubao-1.5-Pro-32k
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-1.5-Pro-32k
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: Doubao-1.5-pro，全新一代主力模型，性能全面升级，在知识、代码、推理、等方面表现卓越。
-    en: Doubao-1.5-pro, the new generation flagship model, features comprehensive performance upgrades and excels in areas such as knowledge, coding, and reasoning.
+    zh: Qitan-1.5-pro，全新一代主力模型，性能全面升级，在知识、代码、推理、等方面表现卓越。
+    en: Qitan-1.5-pro, the new generation flagship model, features comprehensive performance upgrades and excels in areas such as knowledge, coding, and reasoning.
 default_parameters:
     - name: temperature
       label:

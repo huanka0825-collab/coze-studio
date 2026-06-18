@@ -15,6 +15,7 @@
  */
 
 import path from 'path';
+import fs from 'fs';
 
 import { defineConfig } from '@coze-arch/rsbuild-config';
 import { GLOBAL_ENVS } from '@coze-arch/bot-env';
@@ -22,6 +23,33 @@ import { GLOBAL_ENVS } from '@coze-arch/bot-env';
 const API_PROXY_TARGET = `http://localhost:${
   process.env.WEB_SERVER_PORT || 8888
 }/`;
+
+const frontendRoot = path.resolve(__dirname, '../..');
+const frontendRealRoot = fs.realpathSync(frontendRoot);
+const frontendRoots = Array.from(new Set([frontendRoot, frontendRealRoot]));
+
+const resolvePackageSrcRoot = (issuerContext?: string) => {
+  if (!issuerContext) {
+    return undefined;
+  }
+
+  let current = fs.realpathSync(path.resolve(issuerContext));
+  while (
+    frontendRoots.some(root => current.startsWith(root)) &&
+    current !== path.dirname(current)
+  ) {
+    if (
+      fs.existsSync(path.join(current, 'package.json')) &&
+      fs.existsSync(path.join(current, 'src'))
+    ) {
+      return path.join(current, 'src');
+    }
+
+    current = path.dirname(current);
+  }
+
+  return undefined;
+};
 
 const mergedConfig = defineConfig({
   server: {
@@ -42,17 +70,29 @@ const mergedConfig = defineConfig({
     ],
   },
   html: {
-    title: '扣子 Studio',
+    title: '启探智能体工坊',
     favicon: './assets/favicon.png',
     template: './index.html',
     crossorigin: 'anonymous',
+  },
+  output: {
+    copy: [{ from: './public' }],
   },
   tools: {
     postcss: (opts, { addPlugins }) => {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
       addPlugins([require('tailwindcss')('./tailwind.config.ts')]);
     },
-    rspack(config, { appendPlugins, addRules, mergeConfig }) {
+    rspack(config, { appendPlugins, addRules, mergeConfig, rspack }) {
+      appendPlugins([
+        new rspack.NormalModuleReplacementPlugin(/^@\//, resource => {
+          const srcRoot = resolvePackageSrcRoot(resource.context);
+          if (srcRoot) {
+            resource.request = path.join(srcRoot, resource.request.slice(2));
+          }
+        }),
+      ]);
+
       addRules([
         {
           test: /\.(css|less|jsx|tsx|ts|js)/,

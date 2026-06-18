@@ -1,10 +1,10 @@
 id: 60040
-name: Doubao-1.5-Thinking-Pro
-icon_uri: default_icon/doubao_v2.png
+name: Qitan-1.5-Thinking-Pro
+icon_uri: default_icon/qitan_v2.png
 icon_url: ""
 description:
-    zh: doubao-1.5 全新深度思考模型，在数学、编程、科学推理等专业领域及创意写作等通用任务中表现突出，在 AIME 2024、Codeforces、GPQA 等多项权威基准上达到或接近业界第一梯队水平。
-    en: doubao-1.5 is a brand-new deep thinking model that excels in specialized fields such as mathematics, programming, scientific reasoning, as well as general tasks like creative writing. It achieves or approaches the industry’s top-tier level on multiple authoritative benchmarks including AIME 2024, Codeforces, and GPQA.
+    zh: qitan-1.5 全新深度思考模型，在数学、编程、科学推理等专业领域及创意写作等通用任务中表现突出，在 AIME 2024、Codeforces、GPQA 等多项权威基准上达到或接近业界第一梯队水平。
+    en: qitan-1.5 is a brand-new deep thinking model that excels in specialized fields such as mathematics, programming, scientific reasoning, as well as general tasks like creative writing. It achieves or approaches the industry’s top-tier level on multiple authoritative benchmarks including AIME 2024, Codeforces, and GPQA.
 default_parameters:
     - name: temperature
       label:

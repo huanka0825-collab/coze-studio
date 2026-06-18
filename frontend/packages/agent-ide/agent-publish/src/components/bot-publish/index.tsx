@@ -137,7 +137,7 @@ export const AgentPublishPage = () => {
   );
 
   return (
-    <UILayout title={`${botInfo?.name} - Publish`}>
+    <UILayout title={`${botInfo?.name} - 发布`}>
       <UILayout.Header className={styles['publish-header']}>
         <div className={styles.header}>
           <div className="flex items-center">
